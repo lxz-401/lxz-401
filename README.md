@@ -1,3 +1,4 @@
+```
 <!-- azikdev@github:~$ whoami   -->
 
 ┌──(azikbro<img src="kali_icon.svg" width="15" height="15" alt="kali-linux"/> github)  
@@ -59,3 +60,5 @@ azikdev@github:~$ contact --list
 
 ┌──(azikbro<img src="kali_icon.svg" width="15" height="15" alt="kali-linux"/> github)  
 └─#
+
+```
