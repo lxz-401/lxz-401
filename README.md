@@ -1,64 +1,196 @@
 ```
-<!-- azikdev@github:~$ whoami   -->
+┌──(lxz-401㉿github)-[~]
+└─$ whoami
 
-┌──(azikbro<img src="kali_icon.svg" width="15" height="15" alt="kali-linux"/> github)  
-└─# whoami  
-
----
-
-┌──────────────────────────────────────────┐  
-│ 🔵 Running identity.sh...‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ |  
+┌──────────────────────────────────────────┐
+│ Running identity.sh...                   │
 └──────────────────────────────────────────┘
-
----
 
 [■■■■■■■■■■■■■■■■■■■■] 100%
 
-OUTPUT:  
-┌───────────────┐  
-│ azikdev ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎│ FullStack WEB Developer  
-│ LOCATION  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ │ Navoiy  
-│ STATUS  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ │ idle...  
+OUTPUT:
+┌───────────────┐
+│ lxz-401       │ FullStack WEB Developer
+│ LOCATION      │ Navoiy
+│ STATUS        │ idle...
 └───────────────┘
 
-┌──(azikbro<img src="kali_icon.svg" width="15" height="15" alt="kali-linux"/> github)  
-└─# check_skills  
-┌──────────────────────────────────────────┐  
-│ 🔵 Initializing skill matrix...│  
+┌──(lxz-401㉿github)-[~]
+└─$ check_skills
+
+┌──────────────────────────────────────────┐
+│ Initializing skill matrix...             │
 └──────────────────────────────────────────┘
 
-╔═══════════════════════════════════════════════════════════╗  
-║ COMPLETE SKILL MATRIX (LVL [0-10]) ║  
-╠═══════════════════════════════════════════════════════════╣  
-║ JavaScript ▰▰▰▰▰▰▱▱▱▱ 6 ║  
-║ Python ▰▰▰▰▰▰▱▱▱▱ 6 ║  
-║ React ▰▰▰▰▰▰▰▰▱▱ 8 ║  
-║ NodeJS ▰▰▱▱▱▱▱▱▱▱ 2 ║  
-║ Minecraft Dev ▰▰▰▰▰▰▰▰▰▰ 10 ║  
-║ Django ▰▰▰▰▰▱▱▱▱▱ 5 ║  
-║ Django Rest API ▰▰▰▰▰▱▱▱▱▱ 5 ║  
+╔═══════════════════════════════════════════════════════════╗
+║ COMPLETE SKILL MATRIX (LVL [0-10])                        ║
+╠═══════════════════════════════════════════════════════════╣
+║ JavaScript 6                                              ║
+║ Python 6                                                  ║
+║ React 8                                                   ║
+║ NodeJS 2                                                  ║
+║ TypeScript 5                                              ║
+║ Django 5                                                  ║
+║ Django Rest API 5                                         ║
 ╚═══════════════════════════════════════════════════════════╝
 
-┌──(azikbro<img src="kali_icon.svg" width="15" height="15" alt="kali-linux"/> github)  
-└─# run status.sh
+┌──(lxz-401㉿github)-[~]
+└─$ run status.sh
 
-┌──────────────────────────────────────────┐  
-│ 🔵 Checking current status... │  
+┌──────────────────────────────────────────┐
+│ Checking current status...               │
 └──────────────────────────────────────────┘
 
-[AVAILABLE] ██████████ 100%  
-[CODING] ████░░░░░░ 50%  
-[DEBUGGING] ██░░░░░░░░ 15%  
+[AVAILABLE] ██████████ 100%
+[CODING] ████░░░░░░ 50%
+[DEBUGGING] ██░░░░░░░░ 15%
 [SLEEPING] █░░░░░░░░░ 5%
 
-azikdev@github:~$ contact --list  
-┌──────────────────────────────────────────┐  
-│ 🔵 Loading contact information... │  
-└──────────────────────────────────────────┘  
-[Telegram](https://t.me/azikdev02)  
-[Instagram](https://www.instagram.com/_azik__bro_/)
+┌──────────────────────────────────────────┐
+│ Fetching contact information...         │
+└──────────────────────────────────────────┘
 
-┌──(azikbro<img src="kali_icon.svg" width="15" height="15" alt="kali-linux"/> github)  
-└─#
+╔═══════════════════════════════════════════════════════════╗
+║ CONTACT CHANNELS                                          ║
+╠═══════════════════════════════════════════════════════════╣
+║ [EMAIL]    → lxz-401@example.com                          ║
+║ [TELEGRAM] → @lxz-401                                     ║
+║ [GITHUB]   → github.com/lxz-401                           ║
+║ [LINKEDIN] → linkedin.com/in/lxz-401                      ║
+╚═══════════════════════════════════════════════════════════╝
 
+┌──(lxz-401㉿github)-[~]
+└─$ ls projects/
+
+┌──────────────────────────────────────────┐
+│ Loading project directory...             │
+└──────────────────────────────────────────┘
+
+drwxr-xr-x  6 lxz-401  staff   192 Jan 29 2026  instagram-telegram-bot/
+drwxr-xr-x  5 lxz-401  staff   160 Feb 01 2026  web-portfolio/
+drwxr-xr-x  4 lxz-401  staff   128 Jan 15 2026  automation-scripts/
+
+┌──(lxz-401㉿github)-[~]
+└─$ cat projects/featured.txt
+
+╔═══════════════════════════════════════════════════════════╗
+║ FEATURED PROJECTS                                         ║
+╠═══════════════════════════════════════════════════════════╣
+║                                                           ║
+║ � Instagram → Telegram Bot                                ║
+║    ├─ Auto-forward Instagram content to Telegram          ║
+║    ├─ Tech: Python, Telegram Bot API                      ║
+║    └─ Status: [BETA]                                      ║
+║                                                           ║
+║ 🌐 Web Portfolio                                          ║
+║    ├─ Personal portfolio website with modern design       ║
+║    ├─ Tech: React, Next.js, TailwindCSS                   ║
+║    └─ Status: [ACTIVE DEVELOPMENT]                        ║
+║                                                           ║
+║ 🤖 Automation Scripts                                     ║
+║    ├─ Collection of useful automation tools               ║
+║    ├─ Tech: Python, Bash, Node.js                         ║
+║    └─ Status: [STABLE]                                    ║
+║                                                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+┌──(lxz-401㉿github)-[~]
+└─$ ./get_stats.sh --github
+
+┌──────────────────────────────────────────┐
+│ Fetching GitHub statistics...            │
+└──────────────────────────────────────────┘
+
+[████████████████████] 100%
+
+╔═══════════════════════════════════════════════════════════╗
+║ GITHUB STATISTICS                                         ║
+╠═══════════════════════════════════════════════════════════╣
+║ Total Repositories    : 15+                               ║
+║ Total Commits (2026)  : 500+                              ║
+║ Total Stars Earned    : 50+                               ║
+║ Active Projects       : 4                                 ║
+║ Languages Used        : 8                                 ║
+║ Longest Streak        : 30 days                           ║
+╚═══════════════════════════════════════════════════════════╝
+
+┌──(lxz-401㉿github)-[~]
+└─$ cat /etc/motd
+
+  ██╗     ██╗  ██╗███████╗      ██╗  ██╗ ██████╗  ██╗
+  ██║     ╚██╗██╔╝╚══███╔╝      ██║  ██║██╔═████╗███║
+  ██║      ╚███╔╝   ███╔╝ █████╗██║  ██║██║██╔██║╚██║
+  ██║      ██╔██╗  ███╔╝  ╚════╝╚██╗██╔╝████╔╝██║ ██║
+  ███████╗██╔╝ ██╗███████╗       ╚███╔╝ ╚██████╔╝ ██║
+  ╚══════╝╚═╝  ╚═╝╚══════╝        ╚══╝   ╚═════╝  ╚═╝
+
+  ┌─────────────────────────────────────────────────────┐
+  │ "Code is like humor. When you have to explain it,   │
+  │  it's bad." - Cory House                            │
+  └─────────────────────────────────────────────────────┘
+
+┌──(lxz-401㉿github)-[~]
+└─$ history | tail -5
+
+  498  git commit -m "feat: add server background images"
+  499  npm run dev
+  500  python manage.py migrate
+  501  git push origin main
+  502  neofetch
+
+┌──(lxz-401㉿github)-[~]
+└─$ echo $CURRENT_FOCUS
+
+[████████░░] 80% - Building Web Portfolio
+[███████░░░] 70% - Learning TypeScript
+[██████████] 100% - Instagram Bot Automation
+
+┌──(lxz-401㉿github)-[~]
+└─$ cat ~/.config/interests.conf
+
+╔═══════════════════════════════════════════════════════════╗
+║ INTERESTS & HOBBIES                                       ║
+╠═══════════════════════════════════════════════════════════╣
+║ [✓] Full-Stack Web Development                            ║
+║ [✓] Game Development & Modding                            ║
+║ [✓] Bot Development & Automation                          ║
+║ [✓] Open Source Contribution                              ║
+║ [✓] Cybersecurity & Ethical Hacking                       ║
+║ [✓] Problem Solving & Algorithms                          ║
+╚═══════════════════════════════════════════════════════════╝
+
+┌──(lxz-401㉿github)-[~]
+└─$ sudo apt install collaboration
+
+Reading package lists... Done
+Building dependency tree... Done
+
+Do you want to collaborate? [Y/n] Y
+
+╔═══════════════════════════════════════════════════════════╗
+║ COLLABORATION STATUS: OPEN                                ║
+╠═══════════════════════════════════════════════════════════╣
+║ I'm always open to:                                       ║
+║  • Interesting projects                                   ║
+║  • Open source contributions                              ║
+║  • Learning new technologies                              ║
+║  • Sharing knowledge                                      ║
+║                                                           ║
+║ Feel free to reach out! 🚀                                ║
+╚═══════════════════════════════════════════════════════════╝
+
+┌──(lxz-401㉿github)-[~]
+└─$ exit
+
+logout
+Connection to github.com closed.
 ```
+
+<div align="center">
+
+![Profile Views](https://komarev.com/ghpvc/?username=lxz-401&color=brightgreen&style=flat-square)
+[![GitHub followers](https://img.shields.io/github/followers/lxz-401?style=social)](https://github.com/lxz-401)
+
+**⭐ Star my repositories if you find them useful! ⭐**
+
+</div>
