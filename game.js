@@ -15,6 +15,8 @@
   const overlaySubtitle = document.getElementById('overlaySubtitle');
   const startBtn = document.getElementById('startBtn');
   const soundToggleBtn = document.getElementById('soundToggleBtn');
+  const autoplayToggleBtn = document.getElementById('autoplayToggleBtn');
+  const autoplayBadge = document.getElementById('autoplayBadge');
   const terminalInput = document.getElementById('terminalInput');
   const consoleOutput = document.getElementById('consoleOutput');
 
@@ -92,6 +94,33 @@
       soundEnabled = !soundEnabled;
       soundToggleBtn.textContent = soundEnabled ? '🔊 Sound: ON' : '🔇 Sound: OFF';
       logToTerminal(`Sound effect set to: ${soundEnabled ? 'ENABLED' : 'MUTED'}`, 'log-info');
+    });
+  }
+
+  // Auto-Play State
+  let autoPlay = true;
+
+  function setAutoPlay(val, logChange = true) {
+    autoPlay = val;
+    if (autoplayToggleBtn) {
+      autoplayToggleBtn.textContent = autoPlay ? '🤖 Auto-Play: ON' : '🎮 Manual: ON';
+      autoplayToggleBtn.style.borderColor = autoPlay ? '#388bfd' : '#238636';
+      autoplayToggleBtn.style.color = autoPlay ? '#58a6ff' : '#3fb950';
+    }
+    if (autoplayBadge) {
+      autoplayBadge.style.display = autoPlay ? 'block' : 'none';
+    }
+    if (logChange) {
+      logToTerminal(autoPlay 
+        ? "Autonomous Bot engaged! AI is now clearing commits." 
+        : "Manual control engaged! Use arrows/mouse.", 'log-info');
+    }
+  }
+
+  if (autoplayToggleBtn) {
+    autoplayToggleBtn.addEventListener('click', () => {
+      initAudio();
+      setAutoPlay(!autoPlay);
     });
   }
 
@@ -285,11 +314,17 @@
       return;
     }
 
+    if (['ArrowLeft', 'ArrowRight', 'KeyA', 'KeyD'].includes(e.code)) {
+      if (autoPlay) setAutoPlay(false);
+    }
+
     keys[e.code] = true;
 
     if (e.code === 'Space') {
       e.preventDefault();
-      if (!isRunning) {
+      if (autoPlay) {
+        setAutoPlay(false);
+      } else if (!isRunning) {
         startGame();
       } else if (!hasLaunched) {
         launchBall();
@@ -313,11 +348,17 @@
     const rect = canvas.getBoundingClientRect();
     const scaleX = V_WIDTH / rect.width;
     const mouseX = (e.clientX - rect.left) * scaleX;
-    paddle.targetX = Math.max(0, Math.min(V_WIDTH - paddle.width, mouseX - paddle.width / 2));
+    if (!autoPlay) {
+      paddle.targetX = Math.max(0, Math.min(V_WIDTH - paddle.width, mouseX - paddle.width / 2));
+    }
   });
 
   canvas.addEventListener('click', () => {
     initAudio();
+    if (autoPlay) {
+      setAutoPlay(false);
+      return;
+    }
     if (!isRunning) {
       startGame();
     } else if (!hasLaunched) {
@@ -327,6 +368,7 @@
 
   canvas.addEventListener('touchmove', (e) => {
     e.preventDefault();
+    if (autoPlay) setAutoPlay(false);
     if (e.touches.length > 0) {
       const rect = canvas.getBoundingClientRect();
       const scaleX = V_WIDTH / rect.width;
@@ -337,6 +379,10 @@
 
   canvas.addEventListener('touchstart', (e) => {
     initAudio();
+    if (autoPlay) {
+      setAutoPlay(false);
+      return;
+    }
     if (!isRunning) {
       startGame();
     } else if (!hasLaunched) {
@@ -458,8 +504,55 @@
   function update() {
     if (!isRunning || isPaused) return;
 
-    // Paddle Movement (Keyboard or Mouse Lerp)
-    if (keys['ArrowLeft'] || keys['KeyA']) {
+    // Paddle Movement
+    if (autoPlay) {
+      if (!hasLaunched && balls.length > 0) {
+        launchBall();
+      }
+
+      // AI Target Selection
+      let targetX = balls[0] ? balls[0].x : V_WIDTH / 2;
+
+      // Find ball with highest interception urgency
+      let urgentBall = null;
+      let maxUrgency = -9999;
+      balls.forEach(b => {
+        let score = b.y;
+        if (b.dy > 0) score += 400; // prioritize falling balls
+        if (score > maxUrgency) {
+          maxUrgency = score;
+          urgentBall = b;
+        }
+      });
+
+      if (urgentBall) {
+        if (urgentBall.dy > 0) {
+          const timeToPaddle = Math.max(0.01, (paddle.y - urgentBall.y) / urgentBall.dy);
+          let predictedX = urgentBall.x + urgentBall.dx * timeToPaddle;
+          while (predictedX < 15 || predictedX > V_WIDTH - 15) {
+            if (predictedX < 15) predictedX = 30 - predictedX;
+            if (predictedX > V_WIDTH - 15) predictedX = (V_WIDTH - 15) * 2 - predictedX;
+          }
+          targetX = predictedX;
+        } else {
+          targetX = urgentBall.x * 0.7 + (V_WIDTH / 2) * 0.3;
+        }
+      }
+
+      // If nearby falling powerup, safely steer towards it
+      for (const pu of powerups) {
+        if (pu.y > V_HEIGHT * 0.5 && pu.y < paddle.y + 10) {
+          if (!urgentBall || urgentBall.dy <= 0 || urgentBall.y < V_HEIGHT * 0.6) {
+            targetX = pu.x;
+            break;
+          }
+        }
+      }
+
+      const desiredX = targetX - paddle.width / 2;
+      paddle.x += (desiredX - paddle.x) * 0.25;
+      paddle.targetX = paddle.x;
+    } else if (keys['ArrowLeft'] || keys['KeyA']) {
       paddle.x -= paddle.speed;
       paddle.targetX = paddle.x;
     } else if (keys['ArrowRight'] || keys['KeyD']) {
@@ -619,16 +712,28 @@
       sfx.lifeLost();
 
       if (lives <= 0) {
-        // Game Over
-        isRunning = false;
-        overlayTitle.textContent = "MERGE CONFLICT (GAME OVER)";
-        overlaySubtitle.textContent = `You scored ${score} pts with a streak of x${maxStreak}. Press restart to build again!`;
-        startBtn.textContent = "Retry / Git Rebase";
-        overlay.classList.remove('hidden');
-        logToTerminal(`FATAL: Build failed. Final Score: ${score}`, 'log-fail');
+        if (autoPlay) {
+          logToTerminal(`[AUTONOMOUS SYSTEM] Re-initiating build cycle...`, 'log-info');
+          setTimeout(() => {
+            if (autoPlay) startGame();
+          }, 1200);
+        } else {
+          // Game Over
+          isRunning = false;
+          overlayTitle.textContent = "MERGE CONFLICT (GAME OVER)";
+          overlaySubtitle.textContent = `You scored ${score} pts with a streak of x${maxStreak}. Press restart to build again!`;
+          startBtn.textContent = "Retry / Git Rebase";
+          overlay.classList.remove('hidden');
+          logToTerminal(`FATAL: Build failed. Final Score: ${score}`, 'log-fail');
+        }
       } else {
         logToTerminal(`Branch lost! Remaining branches (lives): ${lives}`, 'log-fail');
         resetBallAndPaddle();
+        if (autoPlay) {
+          setTimeout(() => {
+            if (autoPlay && !hasLaunched) launchBall();
+          }, 600);
+        }
       }
     }
 
@@ -646,12 +751,27 @@
       if (currentLevel < 3) {
         currentLevel++;
         initLevel(currentLevel);
+        if (autoPlay) {
+          setTimeout(() => {
+            if (autoPlay && !hasLaunched) launchBall();
+          }, 800);
+        }
       } else {
-        isRunning = false;
-        overlayTitle.textContent = "🎉 YOU WON THE GIT UNIVERSE!";
-        overlaySubtitle.textContent = `Incredible! All 3 levels cleared! Final Score: ${score}. lxz-401 is a Master Developer!`;
-        startBtn.textContent = "Play Again";
-        overlay.classList.remove('hidden');
+        if (autoPlay) {
+          logToTerminal(`🏆 Auto-play victory achieved! Looping back to Level 1.`, 'log-powerup');
+          setTimeout(() => {
+            if (autoPlay) {
+              currentLevel = 1;
+              startGame();
+            }
+          }, 1500);
+        } else {
+          isRunning = false;
+          overlayTitle.textContent = "🎉 YOU WON THE GIT UNIVERSE!";
+          overlaySubtitle.textContent = `Incredible! All 3 levels cleared! Final Score: ${score}. lxz-401 is a Master Developer!`;
+          startBtn.textContent = "Play Again";
+          overlay.classList.remove('hidden');
+        }
       }
     }
 
@@ -836,7 +956,11 @@
 
     switch (root) {
       case 'help':
-        logToTerminal("Commands: whoami, skills, projects, stats, level <1-3>, pause, restart, sound, cheat, clear", 'log-powerup');
+        logToTerminal("Commands: whoami, skills, projects, stats, autoplay, level <1-3>, pause, restart, sound, cheat, clear", 'log-powerup');
+        break;
+      case 'autoplay':
+      case 'bot':
+        setAutoPlay(!autoPlay);
         break;
       case 'whoami':
         logToTerminal("lxz-401 | FullStack WEB Developer | Navoiy, Uzbekistan | Status: open for collaboration", 'log-hit');
@@ -893,9 +1017,15 @@
 
   // Initialize
   initLevel(1);
+  startGame();
+  setTimeout(() => {
+    if (autoPlay && !hasLaunched) {
+      launchBall();
+    }
+  }, 400);
   loop();
 
   // Welcome terminal messages
   logToTerminal("Terminal Git-Breakout v1.0 initialized.", 'log-info');
-  logToTerminal("Type 'help' in the terminal prompt below or press [START PLAYING].", 'log-hit');
+  logToTerminal("🤖 Auto-play AI active. Press any key or click to take manual control!", 'log-powerup');
 })();

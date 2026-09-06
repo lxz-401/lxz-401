@@ -182,6 +182,28 @@ canvas#breakoutCanvas {
   cursor: none;
 }
 
+.autoplay-indicator {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: rgba(13, 17, 23, 0.8);
+  border: 1px solid #388bfd;
+  color: #79c0ff;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  animation: pulseAutoplay 2.5s infinite ease-in-out;
+  z-index: 5;
+  letter-spacing: 0.3px;
+}
+
+@keyframes pulseAutoplay {
+  0%, 100% { box-shadow: 0 0 5px rgba(56, 139, 253, 0.3); border-color: #388bfd; }
+  50% { box-shadow: 0 0 15px rgba(56, 139, 253, 0.7); border-color: #58a6ff; }
+}
+
 /* Overlay screens */
 .game-overlay {
   position: absolute;
