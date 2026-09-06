@@ -53,8 +53,8 @@ OUTPUT:
 ║ ➤ PLAY IN TERMINAL:                                       ║
 ║   node cli.js                                             ║
 ║                                                           ║
-║ ➤ PLAY IN BROWSER:                                        ║
-║   Open index.html (Supports Web Audio, Canvas, Power-ups) ║
+║ ➤ PLAY ONLINE (LIVE IN BROWSER):                          ║
+║   https://lxz-401.github.io/lxz-401/                      ║
 ║                                                           ║
 ║ ➤ CONTROLS:                                               ║
 ║   [← / A] [→ / D] Move  |  [SPACE] Launch  |  [R] Restart ║
