@@ -35,6 +35,32 @@ OUTPUT:
 ╚═══════════════════════════════════════════════════════════╝
 
 ┌──(lxz-401㉿github)-[~]
+└─$ ./launch_game.sh --profile lxz-401
+
+┌───────────────────────────────────────────────────────────┐
+│ 🎮 GIT-BREAKOUT: Contribution Graph Breaker Game          │
+└───────────────────────────────────────────────────────────┘
+
+╔═══════════════════════════════════════════════════════════╗
+║ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■   ║
+║ ■ ■ ■ ■ ▓ ▓ ▓ ▓ ■ ■ ■ ■ ■ ■ ■ ▓ ▓ ▓ ▓ ■ ■ ■ ■ ■ ■ ■ ■ ■   ║
+║ ■ ■ ■ ■ ■ ■ █ █ █ █ ■ ■ ■ ■ █ █ █ █ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■   ║
+║                                                           ║
+║                         ●  (Commit Ball)                  ║
+║                                                           ║
+║                  [ ════════════ ] (Paddle)                ║
+╠═══════════════════════════════════════════════════════════╣
+║ ➤ PLAY IN TERMINAL:                                       ║
+║   node cli.js                                             ║
+║                                                           ║
+║ ➤ PLAY IN BROWSER:                                        ║
+║   Open index.html (Supports Web Audio, Canvas, Power-ups) ║
+║                                                           ║
+║ ➤ CONTROLS:                                               ║
+║   [← / A] [→ / D] Move  |  [SPACE] Launch  |  [R] Restart ║
+╚═══════════════════════════════════════════════════════════╝
+
+┌──(lxz-401㉿github)-[~]
 └─$ run status.sh
 
 ┌──────────────────────────────────────────┐
@@ -69,6 +95,7 @@ OUTPUT:
 drwxr-xr-x  6 lxz-401  staff   192 Jan 29 2026  instagram-telegram-bot/
 drwxr-xr-x  5 lxz-401  staff   160 Feb 01 2026  web-portfolio/
 drwxr-xr-x  4 lxz-401  staff   128 Jan 15 2026  automation-scripts/
+drwxr-xr-x  4 lxz-401  staff   128 Sep 06 2026  git-breakout/
 
 ┌──(lxz-401㉿github)-[~]
 └─$ cat projects/featured.txt
@@ -77,7 +104,12 @@ drwxr-xr-x  4 lxz-401  staff   128 Jan 15 2026  automation-scripts/
 ║ FEATURED PROJECTS                                         ║
 ╠═══════════════════════════════════════════════════════════╣
 ║                                                           ║
-║ � Instagram → Telegram Bot                                ║
+║ 🎮 Git-Breakout (Terminal Edition)                        ║
+║    ├─ Interactive Arkanoid game on GitHub Heatmap         ║
+║    ├─ Tech: JavaScript, Canvas API, Web Audio, Node.js    ║
+║    └─ Status: [PLAYABLE]                                  ║
+║                                                           ║
+║ 🚀 Instagram → Telegram Bot                               ║
 ║    ├─ Auto-forward Instagram content to Telegram          ║
 ║    ├─ Tech: Python, Telegram Bot API                      ║
 ║    └─ Status: [BETA]                                      ║
@@ -136,7 +168,7 @@ drwxr-xr-x  4 lxz-401  staff   128 Jan 15 2026  automation-scripts/
   499  npm run dev
   500  python manage.py migrate
   501  git push origin main
-  502  neofetch
+  502  node cli.js
 
 ┌──(lxz-401㉿github)-[~]
 └─$ echo $CURRENT_FOCUS

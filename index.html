@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git-Breakout | lxz-401 Terminal Edition</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="terminal-window">
+    <!-- Terminal Titlebar -->
+    <div class="terminal-header">
+      <div class="terminal-controls">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="terminal-title">lxz-401@github: ~/games/git-breakout</div>
+      <div class="terminal-actions">
+        <button id="soundToggleBtn" class="btn-icon">🔊 Sound: ON</button>
+      </div>
+    </div>
+
+    <!-- Terminal Main Body -->
+    <div class="terminal-body">
+      <!-- Kali Prompt Header -->
+      <div class="kali-prompt">
+        <div><span class="prompt-branch">┌──(</span><span class="prompt-user">lxz-401㉿github</span><span class="prompt-branch">)-[</span><span class="prompt-path">~/games/git-breakout</span><span class="prompt-branch">]</span></div>
+        <div><span class="prompt-dollar">└─$</span> <span class="prompt-cmd">./start_game.sh --player lxz-401 --target contributions-matrix</span></div>
+      </div>
+
+      <!-- Live Dashboard -->
+      <div class="game-stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">Score:</span>
+          <span id="scoreVal" class="stat-value score">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Streak:</span>
+          <span id="streakVal" class="stat-value streak">x0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Branch Lives:</span>
+          <span id="livesVal" class="stat-value lives">♥ ♥ ♥</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Level:</span>
+          <span id="levelVal" class="stat-value">1</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Commits Broken:</span>
+          <span id="destroyedVal" class="stat-value">0</span>
+        </div>
+      </div>
+
+      <!-- Game Canvas Viewport -->
+      <div class="canvas-wrapper">
+        <canvas id="breakoutCanvas"></canvas>
+
+        <!-- Overlay Menu -->
+        <div id="gameOverlay" class="game-overlay">
+          <div id="overlayTitle" class="overlay-title">GIT-BREAKOUT</div>
+          <div id="overlaySubtitle" class="overlay-subtitle">
+            Harness your developer skills to destroy GitHub contribution blocks! Use your paddle to bounce the commit ball and unleash power-ups.
+          </div>
+          <button id="startBtn" class="start-btn">▶ START PLAYING</button>
+          
+          <div class="key-hints">
+            <span><span class="key-badge">← / A</span> <span class="key-badge">→ / D</span> Move</span>
+            <span><span class="key-badge">SPACE</span> Launch / Pause</span>
+            <span><span class="key-badge">R</span> Restart</span>
+            <span><span class="key-badge">Mouse / Touch</span> Drag Paddle</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal Logs & Profile Console -->
+      <div class="terminal-console-section">
+        <!-- Interactive Terminal Log -->
+        <div class="console-box">
+          <div id="consoleOutput" class="console-output"></div>
+          <div class="console-input-row">
+            <span>lxz-401@git:~$</span>
+            <input type="text" id="terminalInput" placeholder="Type command: 'help', 'whoami', 'skills', 'cheat'..." autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+
+        <!-- Quick Profile Card -->
+        <div class="profile-card">
+          <div>
+            <div class="profile-header-name">
+              <span>lxz-401</span>
+              <span class="badge-open">OPEN FOR WORK</span>
+            </div>
+            <p><strong>Role:</strong> FullStack WEB Developer</p>
+            <p><strong>Location:</strong> Navoiy, Uzbekistan</p>
+            <p><strong>Focus:</strong> React, Python, TS, Django</p>
+            <p><strong>Stats:</strong> 15+ Repos | 500+ Commits</p>
+          </div>
+          <div class="profile-links">
+            <a href="https://github.com/lxz-401" target="_blank">GitHub</a>
+            <a href="https://t.me/lxz-401" target="_blank">Telegram</a>
+            <a href="https://linkedin.com/in/lxz-401" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    Created with 💚 for <a href="https://github.com/lxz-401" target="_blank">@lxz-401</a> &bull; Run in terminal with <code>node cli.js</code>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

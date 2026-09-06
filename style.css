@@ -1,0 +1,395 @@
+:root {
+  --bg-color: #090d13;
+  --terminal-bg: #0d1117;
+  --terminal-border: #30363d;
+  --header-bg: #161b22;
+  --text-main: #c9d1d9;
+  --text-dim: #8b949e;
+  --kali-prompt-blue: #58a6ff;
+  --kali-prompt-red: #f85149;
+  --kali-prompt-cyan: #39c5cf;
+  --git-paddle: #1f6feb;
+  --git-ball: #58a6ff;
+  --git-level0: #161b22;
+  --git-level1: #0e4429;
+  --git-level2: #006d32;
+  --git-level3: #26a641;
+  --git-level4: #39d353;
+  --accent-gold: #f1e05a;
+  --accent-purple: #bc8cff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 10px;
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(31, 111, 235, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(57, 211, 83, 0.04) 0%, transparent 50%);
+}
+
+.terminal-window {
+  width: 100%;
+  max-width: 1100px;
+  background-color: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Window Header */
+.terminal-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--terminal-border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.terminal-title {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.terminal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-icon {
+  background: transparent;
+  border: 1px solid var(--terminal-border);
+  color: var(--text-dim);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background-color: #21262d;
+  color: #fff;
+  border-color: #8b949e;
+}
+
+/* Terminal Body */
+.terminal-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Prompt Banner */
+.kali-prompt {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.prompt-branch { color: var(--kali-prompt-blue); }
+.prompt-user { color: var(--kali-prompt-red); font-weight: bold; }
+.prompt-path { color: #f0f6fc; }
+.prompt-dollar { color: var(--kali-prompt-blue); }
+.prompt-cmd { color: #58a6ff; font-weight: bold; }
+
+/* Dashboard Bar */
+.game-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(22, 27, 34, 0.7);
+  border: 1px solid var(--terminal-border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  gap: 12px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-label {
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  color: #fff;
+  font-weight: bold;
+}
+
+.stat-value.score { color: var(--git-level4); }
+.stat-value.streak { color: var(--accent-gold); }
+.stat-value.lives { color: var(--kali-prompt-red); }
+
+/* Game Canvas Container */
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #0a0d12;
+  border: 1px solid #1f242c;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+canvas#breakoutCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: none;
+}
+
+/* Overlay screens */
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.game-overlay.hidden {
+  display: none;
+}
+
+.overlay-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #58a6ff;
+  text-shadow: 0 0 15px rgba(88, 166, 255, 0.5);
+}
+
+.overlay-subtitle {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.start-btn {
+  background: linear-gradient(180deg, #238636 0%, #2ea043 100%);
+  color: #ffffff;
+  border: 1px solid rgba(240, 246, 252, 0.1);
+  padding: 10px 28px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(46, 160, 67, 0.6);
+}
+
+.key-hints {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.key-badge {
+  background: #21262d;
+  border: 1px solid #30363d;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #e6edf3;
+  font-weight: bold;
+}
+
+/* Terminal Console & Log */
+.terminal-console-section {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 12px;
+}
+
+@media (max-width: 850px) {
+  .terminal-console-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.console-box {
+  background-color: #06090e;
+  border: 1px solid var(--terminal-border);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+}
+
+.console-output {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #8b949e;
+  display: flex;
+  flex-direction: column;
+}
+
+.console-output div {
+  word-break: break-all;
+}
+
+.console-output .log-hit { color: var(--git-level4); }
+.console-output .log-powerup { color: var(--accent-gold); }
+.console-output .log-fail { color: var(--kali-prompt-red); }
+.console-output .log-info { color: var(--kali-prompt-blue); }
+
+.console-input-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #21262d;
+}
+
+.console-input-row span {
+  color: var(--git-level4);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#terminalInput {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  width: 100%;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Profile Quick Info */
+.profile-card {
+  background-color: #06090e;
+  border: 1px solid var(--terminal-border);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-header-name {
+  font-weight: bold;
+  color: #58a6ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.badge-open {
+  background: rgba(46, 160, 67, 0.2);
+  color: #3fb950;
+  border: 1px solid #238636;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.profile-card p {
+  color: var(--text-dim);
+  font-size: 11px;
+  margin: 3px 0;
+}
+
+.profile-card strong {
+  color: #c9d1d9;
+}
+
+.profile-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.profile-links a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 11px;
+  border-bottom: 1px dashed #58a6ff;
+}
+
+.profile-links a:hover {
+  color: #79c0ff;
+  border-bottom-style: solid;
+}
+
+/* Footer / Instructions */
+.page-footer {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.page-footer a {
+  color: var(--kali-prompt-blue);
+  text-decoration: none;
+}

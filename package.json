@@ -1,0 +1,25 @@
+{
+  "name": "git-breakout-lxz-401",
+  "version": "1.0.0",
+  "description": "Terminal-styled GitHub contribution Breakout game for lxz-401",
+  "main": "cli.js",
+  "bin": {
+    "git-breakout": "./cli.js"
+  },
+  "scripts": {
+    "start": "node cli.js",
+    "cli": "node cli.js",
+    "web": "node -e \"const http=require('http'), fs=require('fs'), path=require('path'), {exec}=require('child_process'); const port=3000; http.createServer((req,res)=>{ let fp = path.join(__dirname, req.url==='/'?'index.html':req.url); fs.readFile(fp, (err,data)=>{ if(err){res.writeHead(404);res.end('Not found');}else{ const ext=path.extname(fp); const mime = ext==='.css'?'text/css':ext==='.js'?'text/javascript':'text/html'; res.writeHead(200,{'Content-Type':mime}); res.end(data); } }); }).listen(port, ()=>{ console.log('Serving on http://localhost:'+port); exec('start http://localhost:'+port); });\""
+  },
+  "keywords": [
+    "github",
+    "contribution-graph",
+    "breakout",
+    "arkanoid",
+    "terminal",
+    "kali-linux",
+    "lxz-401"
+  ],
+  "author": "lxz-401",
+  "license": "MIT"
+}
