@@ -963,13 +963,13 @@
         setAutoPlay(!autoPlay);
         break;
       case 'whoami':
-        logToTerminal("lxz-401 | FullStack WEB Developer | Navoiy, Uzbekistan | Status: open for collaboration", 'log-hit');
+        logToTerminal("lxz-401 | Full-Stack Web Developer | Navoiy, Uzbekistan | Status: open for collaboration", 'log-hit');
         break;
       case 'skills':
         logToTerminal("SKILLS: React (8), JS (6), Python (6), TypeScript (5), Django (5), Node (2)", 'log-hit');
         break;
       case 'projects':
-        logToTerminal("1. Instagram → Telegram Bot (Python)  2. Web Portfolio (Next.js)  3. Automation Scripts", 'log-hit');
+        logToTerminal("1. Media Controls (GNOME)  2. NitroVim (Neovim)  3. Rovyl (Launcher)  4. OLX MCP Server", 'log-hit');
         break;
       case 'stats':
         logToTerminal("15+ Repositories | 500+ Commits | 50+ Stars | 30 Days Streak", 'log-hit');

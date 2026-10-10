@@ -6,14 +6,14 @@
 │ Running identity.sh...                   │
 └──────────────────────────────────────────┘
 
-[■■■■■■■■■■■■■■■■■■■■] 100%
+[████████████████████] 100%
 
 OUTPUT:
-┌───────────────┐
-│ lxz-401       │ FullStack WEB Developer
-│ LOCATION      │ Navoiy
-│ STATUS        │ idle...
-└───────────────┘
+┌───────────────┬──────────────────────────┐
+│ lxz-401       │ Full-Stack Web Developer │
+│ LOCATION      │ Navoiy                   │
+│ STATUS        │ idle...                  │
+└───────────────┴──────────────────────────┘
 
 ┌──(lxz-401㉿github)-[~]
 └─$ check_skills
@@ -28,10 +28,10 @@ OUTPUT:
 ║ JavaScript 6                                              ║
 ║ Python 6                                                  ║
 ║ React 8                                                   ║
-║ NodeJS 2                                                  ║
+║ Node.js 2                                                 ║
 ║ TypeScript 5                                              ║
 ║ Django 5                                                  ║
-║ Django Rest API 5                                         ║
+║ Django REST API 5                                         ║
 ╚═══════════════════════════════════════════════════════════╝
 
 ┌──(lxz-401㉿github)-[~]
@@ -44,7 +44,7 @@ OUTPUT:
 
 <div align="center">
   <a href="https://lxz-401.github.io/lxz-401/">
-    <img src="git-breakout.svg" width="100%" alt="Git-Breakout: Automatic Contribution Game" />
+    <img src="./git-breakout.svg" width="100%" alt="Git-Breakout: Automatic Contribution Game" />
   </a>
 </div>
 
@@ -57,23 +57,24 @@ OUTPUT:
 ║   node cli.js                                             ║
 ║                                                           ║
 ║ ➤ CONTROLS:                                               ║
-║   [← / A] [→ / D] Move  |  [SPACE] Launch  |  [R] Restart ║
+║   [← / A] [→ / D] Move  |  [SPACE] Launch / Pause         ║
+║   [R] Restart / Reset   |  [Q] Quit                       ║
 ╚═══════════════════════════════════════════════════════════╝
 
 ┌──(lxz-401㉿github)-[~]
-└─$ run status.sh
+└─$ ./status.sh
 
 ┌──────────────────────────────────────────┐
 │ Checking current status...               │
 └──────────────────────────────────────────┘
 
 [AVAILABLE] ██████████ 100%
-[CODING] ████░░░░░░ 50%
+[CODING] █████░░░░░ 50%
 [DEBUGGING] ██░░░░░░░░ 15%
 [SLEEPING] █░░░░░░░░░ 5%
 
 ┌──────────────────────────────────────────┐
-│ Fetching contact information...         │
+│ Fetching contact information...          │
 └──────────────────────────────────────────┘
 
 ╔═══════════════════════════════════════════════════════════╗
@@ -92,10 +93,13 @@ OUTPUT:
 │ Loading project directory...             │
 └──────────────────────────────────────────┘
 
-drwxr-xr-x  6 lxz-401  staff   192 Jan 29 2026  instagram-telegram-bot/
-drwxr-xr-x  5 lxz-401  staff   160 Feb 01 2026  web-portfolio/
-drwxr-xr-x  4 lxz-401  staff   128 Jan 15 2026  automation-scripts/
-drwxr-xr-x  4 lxz-401  staff   128 Sep 06 2026  git-breakout/
+drwxr-xr-x  9 lxz-401  lxz-401  288 Oct 07 2026  media-controls/
+drwxr-xr-x  8 lxz-401  lxz-401  256 Sep 12 2026  NitroVim/
+drwxr-xr-x  7 lxz-401  lxz-401  224 Oct 02 2026  rovyl/
+drwxr-xr-x  6 lxz-401  lxz-401  192 Sep 17 2026  NitroOS/
+drwxr-xr-x  8 lxz-401  lxz-401  256 Oct 10 2026  nitro-os.github.io/
+drwxr-xr-x  5 lxz-401  lxz-401  160 Sep 19 2026  mousiki/
+drwxr-xr-x  4 lxz-401  lxz-401  128 Sep 23 2026  olx-mcp-server/
 
 ┌──(lxz-401㉿github)-[~]
 └─$ cat projects/featured.txt
@@ -104,25 +108,30 @@ drwxr-xr-x  4 lxz-401  staff   128 Sep 06 2026  git-breakout/
 ║ FEATURED PROJECTS                                         ║
 ╠═══════════════════════════════════════════════════════════╣
 ║                                                           ║
-║ 🎮 Git-Breakout (Terminal Edition)                        ║
-║    ├─ Interactive Arkanoid game on GitHub Heatmap         ║
-║    ├─ Tech: JavaScript, Canvas API, Web Audio, Node.js    ║
-║    └─ Status: [PLAYABLE]                                  ║
+║ 🎵 Media Controls (GNOME Shell)                           ║
+║    ├─ MPRIS client & media widget for GNOME Shell         ║
+║    ├─ Tech: JavaScript, GJS, GNOME Shell, CSS             ║
+║    └─ Status: [ACTIVE] (440+ Commits)                     ║
 ║                                                           ║
-║ 🚀 Instagram → Telegram Bot                               ║
-║    ├─ Auto-forward Instagram content to Telegram          ║
-║    ├─ Tech: Python, Telegram Bot API                      ║
-║    └─ Status: [BETA]                                      ║
+║ 🔥 NitroVim (Neovim IDE Distribution)                     ║
+║    ├─ Fast, modular Neovim setup with LSP & Treesitter    ║
+║    ├─ Tech: Lua, Neovim, Treesitter, LSP                  ║
+║    └─ Status: [ACTIVE] (340+ Commits)                     ║
 ║                                                           ║
-║ 🌐 Web Portfolio                                          ║
-║    ├─ Personal portfolio website with modern design       ║
-║    ├─ Tech: React, Next.js, TailwindCSS                   ║
-║    └─ Status: [ACTIVE DEVELOPMENT]                        ║
+║ 🎯 Rovyl (Radial App Launcher)                            ║
+║    ├─ Gesture & radial mouse launcher for Windows         ║
+║    ├─ Tech: JavaScript, Windows API, Automation           ║
+║    └─ Status: [STABLE] (250 Commits)                      ║
 ║                                                           ║
-║ 🤖 Automation Scripts                                     ║
-║    ├─ Collection of useful automation tools               ║
-║    ├─ Tech: Python, Bash, Node.js                         ║
-║    └─ Status: [STABLE]                                    ║
+║ 💿 NitroOS (Live USB Distribution)                        ║
+║    ├─ Custom lightweight Linux OS with custom shell       ║
+║    ├─ Tech: Linux, Shell, Neovim, Lua                     ║
+║    └─ Status: [ACTIVE] (150+ Commits)                     ║
+║                                                           ║
+║ 🔌 OLX MCP Server                                         ║
+║    ├─ Model Context Protocol server for OLX.uz analytics  ║
+║    ├─ Tech: TypeScript, MCP SDK, Node.js                  ║
+║    └─ Status: [ACTIVE]                                    ║
 ║                                                           ║
 ╚═══════════════════════════════════════════════════════════╝
 
@@ -151,10 +160,10 @@ drwxr-xr-x  4 lxz-401  staff   128 Sep 06 2026  git-breakout/
 
   ██╗     ██╗  ██╗███████╗      ██╗  ██╗ ██████╗  ██╗
   ██║     ╚██╗██╔╝╚══███╔╝      ██║  ██║██╔═████╗███║
-  ██║      ╚███╔╝   ███╔╝ █████╗██║  ██║██║██╔██║╚██║
-  ██║      ██╔██╗  ███╔╝  ╚════╝╚██╗██╔╝████╔╝██║ ██║
-  ███████╗██╔╝ ██╗███████╗       ╚███╔╝ ╚██████╔╝ ██║
-  ╚══════╝╚═╝  ╚═╝╚══════╝        ╚══╝   ╚═════╝  ╚═╝
+  ██║      ╚███╔╝   ███╔╝ █████╗███████║██║██╔██║╚██║
+  ██║      ██╔██╗  ███╔╝  ╚════╝╚════██║████╔╝██║ ██║
+  ███████╗██╔╝ ██╗███████╗           ██║╚██████╔╝ ██║
+  ╚══════╝╚═╝  ╚═╝╚══════╝           ╚═╝ ╚═════╝  ╚═╝
 
   ┌─────────────────────────────────────────────────────┐
   │ "Code is like humor. When you have to explain it,   │
