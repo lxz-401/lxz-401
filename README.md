@@ -35,33 +35,6 @@ OUTPUT:
 ╚═══════════════════════════════════════════════════════════╝
 
 ┌──(lxz-401㉿github)-[~]
-└─$ ./launch_game.sh --profile lxz-401
-
-┌───────────────────────────────────────────────────────────┐
-│ 🎮 GIT-BREAKOUT: Contribution Graph Breaker Game          │
-└───────────────────────────────────────────────────────────┘
-```
-
-<div align="center">
-  <a href="https://lxz-401.github.io/lxz-401/">
-    <img src="./git-breakout.svg" width="100%" alt="Git-Breakout: Automatic Contribution Game" />
-  </a>
-</div>
-
-```
-╔═══════════════════════════════════════════════════════════╗
-║ ➤ PLAY ONLINE (LIVE IN BROWSER):                          ║
-║   https://lxz-401.github.io/lxz-401/                      ║
-║                                                           ║
-║ ➤ PLAY IN TERMINAL:                                       ║
-║   node cli.js                                             ║
-║                                                           ║
-║ ➤ CONTROLS:                                               ║
-║   [← / A] [→ / D] Move  |  [SPACE] Launch / Pause         ║
-║   [R] Restart / Reset   |  [Q] Quit                       ║
-╚═══════════════════════════════════════════════════════════╝
-
-┌──(lxz-401㉿github)-[~]
 └─$ ./status.sh
 
 ┌──────────────────────────────────────────┐
