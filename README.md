@@ -11,8 +11,8 @@
 OUTPUT:
 ┌───────────────┬──────────────────────────┐
 │ lxz-401       │ Full-Stack Web Developer │
-│ LOCATION      │ Navoiy                   │
-│ STATUS        │ idle...                  │
+│ LOCATION      │ Navoiy, Uzbekistan       │
+│ STATUS        │ active & coding...       │
 └───────────────┴──────────────────────────┘
 
 ┌──(lxz-401㉿github)-[~]
@@ -25,13 +25,13 @@ OUTPUT:
 ╔═══════════════════════════════════════════════════════════╗
 ║ COMPLETE SKILL MATRIX (LVL [0-10])                        ║
 ╠═══════════════════════════════════════════════════════════╣
-║ JavaScript 6                                              ║
-║ Python 6                                                  ║
-║ React 8                                                   ║
-║ Node.js 2                                                 ║
-║ TypeScript 5                                              ║
-║ Django 5                                                  ║
-║ Django REST API 5                                         ║
+║ JavaScript / TypeScript 8                                 ║
+║ React & Next.js 8                                         ║
+║ Node.js & Bun 7                                           ║
+║ Linux & Shell Scripting 7                                 ║
+║ Lua & Neovim Config 7                                     ║
+║ Python & Django REST 6                                    ║
+║ C++ / System Programming 5                                ║
 ╚═══════════════════════════════════════════════════════════╝
 
 ┌──(lxz-401㉿github)-[~]
@@ -80,10 +80,10 @@ OUTPUT:
 ╔═══════════════════════════════════════════════════════════╗
 ║ CONTACT CHANNELS                                          ║
 ╠═══════════════════════════════════════════════════════════╣
-║ [EMAIL]    → lxz-401@example.com                          ║
-║ [TELEGRAM] → @lxz-401                                     ║
+║ [EMAIL]    → azikdev23@gmail.com                          ║
+║ [TELEGRAM] → @lxz_401                                     ║
 ║ [GITHUB]   → github.com/lxz-401                           ║
-║ [LINKEDIN] → linkedin.com/in/lxz-401                      ║
+║ [STATUS]   → Open for Collaboration & Projects            ║
 ╚═══════════════════════════════════════════════════════════╝
 
 ┌──(lxz-401㉿github)-[~]
@@ -147,12 +147,12 @@ drwxr-xr-x  4 lxz-401  lxz-401  128 Sep 23 2026  olx-mcp-server/
 ╔═══════════════════════════════════════════════════════════╗
 ║ GITHUB STATISTICS                                         ║
 ╠═══════════════════════════════════════════════════════════╣
-║ Total Repositories    : 15+                               ║
-║ Total Commits (2026)  : 500+                              ║
-║ Total Stars Earned    : 50+                               ║
-║ Active Projects       : 4                                 ║
-║ Languages Used        : 8                                 ║
-║ Longest Streak        : 30 days                           ║
+║ Public Repositories   : 19                                ║
+║ Total Commits         : 1,500+                            ║
+║ Total Stars Earned    : 25+                               ║
+║ Primary Languages     : JS, TS, Lua, Shell, C++, Python   ║
+║ Active Ecosystems     : NitroOS, CyberCraft, GNOME, MCP   ║
+║ Collaboration Status  : Open for Work                     ║
 ╚═══════════════════════════════════════════════════════════╝
 
 ┌──(lxz-401㉿github)-[~]
@@ -173,18 +173,19 @@ drwxr-xr-x  4 lxz-401  lxz-401  128 Sep 23 2026  olx-mcp-server/
 ┌──(lxz-401㉿github)-[~]
 └─$ history | tail -5
 
-  498  git commit -m "feat: add server background images"
-  499  npm run dev
-  500  python manage.py migrate
+  498  nvim ~/.config/nvim/init.lua
+  499  git commit -m "feat: enhance radial menu gestures"
+  500  npm run dev
   501  git push origin main
   502  node cli.js
 
 ┌──(lxz-401㉿github)-[~]
 └─$ echo $CURRENT_FOCUS
 
-[████████░░] 80% - Building Web Portfolio
-[███████░░░] 70% - Learning TypeScript
-[██████████] 100% - Instagram Bot Automation
+[█████████░] 90% - NitroOS & NitroVim Linux Ecosystem
+[████████░░] 80% - CyberCraft Launcher & Mods
+[████████░░] 80% - Rovyl & Desktop Productivity Utilities
+[██████████] 100% - OLX MCP Server & Web Applications
 
 ┌──(lxz-401㉿github)-[~]
 └─$ cat ~/.config/interests.conf
