@@ -1,0 +1,45 @@
+name: Profile assets (3D contrib + snake)
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  contrib-3d:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # SVG-larni `github-profile-3d-contrib/` papkasiga yozadi va o'zi commit qiladi.
+      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: lxz-401
+          LENGTH: "500"
+          IS_LONG: false
+          SCALE: "1.1"
+          TITLE_COLOR: "bb9af7"
+          ICON_COLOR: "7dcfff"
+          CONTRIB_COLOR: "7aa2f3"
+          BG_COLOR: "0d1117"
+
+  snake:
+    needs: contrib-3d
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: lxz-401
+          outputs: |
+            dist/github-contribution-grid-snake.svg?color_bg=0d1117&color_bars_seq=bb9af7,7dcfff,7aa2f3,f7768e
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: assets
+          folder: dist
+          target-folder: .
+          clean: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
